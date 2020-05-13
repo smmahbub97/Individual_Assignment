@@ -5,7 +5,7 @@
 </head>
 <body>	
 	 | 
-	<a href="/system/admin/home">Back</a>| 
+	<a href="/system/user/home">Back</a>| 
 	<a href="/logout">Logout</a>
 
 	<table border="1">
@@ -22,8 +22,8 @@
 			<td>{{$category->catname}}</td>
 			<td>{{$category->tag}}</td>
 			<td>
-				<a href="{{route('admin.editcategory',$category->catid)}}">Edit</a> ||
-				<a href="{{route('admin.deletecategory',$category->catid)}}">Delete</a>
+				<a href="{{route('user.editcategory',$category->catid)}}">Edit</a> ||
+				<a href="{{route('user.deletecategory',$category->catid)}}">Delete</a>
 			</td>
 		</tr>
 		@endforeach

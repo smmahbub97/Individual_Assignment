@@ -16,34 +16,46 @@ Route::post('/system/register', 'registerController@verification')->name('regist
 
 Route::group(['middleware'=>['sess']], function(){
 
-    //admin_home
+    //admin_panel
     Route::get('/system/admin/home', 'adminController@index')->name('admin.index');
-    
-    Route::get('/system/manager/home', 'managerController@index')->name('manager.index');
-
+//category 
     Route::get('/system/category', 'adminController@view_category')->name('admin.category');
-   
-   /* //view all list for admin
-    Route::get('/system/supportstaff', 'adminController@view_all_staff')->name('admin.allstaff');
-    //add new
-    Route::get('/system/supportstaff/add', 'adminController@add')->name('admin.add');
-    //insert
-    Route::post('/system/supportstaff/add', 'adminController@insert')->name('admin.add');
-    //delete bussmanager for admin
-    Route::get('/system/busmanager/{id}/delete', 'adminController@deletemanager')->name('admin.deletemanager');
-    //manager_home
-    
-    Route::get('/system/buscounter', 'managerController@view_counter')->name('manager.allcounter');
 
-    Route::get('/system/buscounter/add', 'managerController@add_bus')->name('manager.addbus');
+    Route::get('/system/editcategory/{id}/edit', 'adminController@edit')->name('admin.editcategory');
 
-    Route::post('/system/buscounter/add', 'managerController@insert_bus')->name('manager.addbus');
+    Route::post('/system/editcategory/{id}/edit', 'adminController@update_category')->name('admin.editcategory');
 
-    Route::get('/system/buscounter/{id}/edit', 'managerController@edit_bus')->name('manager.editbus');
-    
-    Route::post('/system/buscounter/{id}/edit', 'managerController@update_bus')->name('manager.editbus');
-*/
-    
+    Route::get('/system/deletecategory/{id}/delete', 'adminController@deletecategory')->name('admin.deletecategory');
+
+//tag
+    Route::get('/system/tag', 'adminController@view_tag')->name('admin.tag');
+
+    Route::get('/system/edittag/{id}/edit', 'adminController@edit_tag')->name('admin.edittag');
+
+    Route::post('/system/edittag/{id}/edit', 'adminController@update_tag')->name('admin.edittag');
+
+    Route::get('/system/deletetag/{id}/delete', 'adminController@deletetag')->name('admin.deletetag');
+
+
+
+
+
+
+
+
+    ///user_panel
+	Route::get('/system/user/home', 'userController@index')->name('user.index');
+
+    Route::get('/system/category', 'userController@view_category')->name('user.category');
+
+    Route::get('/system/editcategory/{id}/edit', 'userController@edit')->name('user.editcategory');
+
+    Route::post('/system/editcategory/{id}/edit', 'userController@update_category')->name('user.editcategory');
+
+    Route::get('/system/deletecategory/{id}/delete', 'userController@deletecategory')->name('user.deletecategory');
+ 
+ 
+        
 });
 
 //logout

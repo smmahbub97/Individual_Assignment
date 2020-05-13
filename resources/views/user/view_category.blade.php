@@ -4,7 +4,7 @@
 	
 </head>
 <body>	
-	 | 
+	<h1>Category List</h1>&nbsp
 	<a href="/system/user/home">Back</a>| 
 	<a href="/logout">Logout</a>
 

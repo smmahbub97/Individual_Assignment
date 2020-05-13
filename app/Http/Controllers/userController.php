@@ -7,19 +7,19 @@ use Validator;
 use App\User;
 use Carbon\Carbon;
 
-class adminController extends Controller
+class userController extends Controller
 {
     public function index(Request $req)
     {
-      return view('admin/index');
+      return view('user/index');
     } 
-//category
+
     public function view_category(Request $req)
     {
       $id=$req->session()->get('id');
-      $cat = DB::table('category')
+      $categories = DB::table('category')
                     ->get();
-      return view('admin/view_category',['cat'=>$cat]);
+      return view('user/view_category',['categories'=>$categories]);
     }
 
     public function edit(Request $req, $id)
@@ -27,7 +27,7 @@ class adminController extends Controller
       $cat = DB::table('category')
       ->where('catid',$id)
       ->first(); 
-      return view('admin/edit',['cat'=>$cat]);
+      return view('user/edit',['cat'=>$cat]);
     }
 
     public function update_category(Request $req)
@@ -43,7 +43,7 @@ class adminController extends Controller
                 ->with('errors', $validation->errors())
                 ->withInput();
 
-        return redirect()->route('admin.index')
+        return redirect()->route('user.index')
                         ->with('errors', $validation->errors())
                         ->withInput();
         }
@@ -55,14 +55,15 @@ class adminController extends Controller
                 
                 ]
             );
-            return redirect()->route('admin.category');
+            return redirect()->route('user.category');
         }
     }
+
 
     public function deletecategory(Request $req,$id)
     {
       DB::table('category')->where('catid', $id)->delete();
-      return redirect()->route('admin.category');
+      return redirect()->route('user.category');
     } 
 
 
@@ -73,7 +74,7 @@ class adminController extends Controller
       $id=$req->session()->get('id');
       $tags = DB::table('tag')
                     ->get();
-      return view('admin/view_tag',['tags'=>$tags]);
+      return view('user/view_tag',['tags'=>$tags]);
     }
 
 
@@ -82,7 +83,7 @@ class adminController extends Controller
       $tags = DB::table('tag')
       ->where('tagid',$id)
       ->first(); 
-      return view('admin/edit_tag',['tags'=>$tags]);
+      return view('user/edit_tag',['tags'=>$tags]);
     }
 
     public function update_tag(Request $req)
@@ -97,7 +98,7 @@ class adminController extends Controller
                 ->with('errors', $validation->errors())
                 ->withInput();
 
-        return redirect()->route('admin.index')
+        return redirect()->route('user.index')
                         ->with('errors', $validation->errors())
                         ->withInput();
         }
@@ -108,19 +109,19 @@ class adminController extends Controller
                 
                 ]
             );
-            return redirect()->route('admin.view_tag');
+            return redirect()->route('user.view_tag');
         }
     }
 
     public function deletetag(Request $req,$id)
     {
       DB::table('tag')->where('tagid', $id)->delete();
-      return redirect()->route('admin.view_tag');
+      return redirect()->route('user.view_tag');
     } 
 
     public function add(Request $req)
     {
-      return view('admin/add');
+      return view('user/add');
     }
 
     public function insert(Request $req)
@@ -134,7 +135,7 @@ class adminController extends Controller
                 ->with('errors', $validation->errors())
                 ->withInput();
 
-        return redirect()->route('admin.add')
+        return redirect()->route('user.add')
                         ->with('errors', $validation->errors())
                         ->withInput();
         }
@@ -144,12 +145,9 @@ class adminController extends Controller
                 'tag' => $req->input('tag'),
                 ]
             );
-            return redirect()->route('admin.tag');
+            return redirect()->route('user.tag');
     }
-
-    }
-
-
+}
 
 
 }

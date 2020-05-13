@@ -5,8 +5,8 @@
 </head>
 <body>	
 
-	<h1>Edit User</h1>&nbsp
-	<a href="/system/admin/home">Back</a>|
+	<h1>Edit Tag</h1>&nbsp
+	<a href="/system/admin/home">Back</a>||
 	<a href="/logout">Logout</a> <br>
 
 	<form method="post">

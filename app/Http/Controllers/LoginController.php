@@ -50,12 +50,12 @@ class LoginController extends Controller
               {
                    $req->session()->put('email', $req->email);
                    $req->session()->put('id', $user->id);
-                   return redirect()->route('manager.index');
+                   return redirect()->route('user.index');
                }
                
                else{
                    
-                   return redirect()->route('/system/supportstaff/login');
+                   return redirect()->route('/system/user/login');
                }
 
         }

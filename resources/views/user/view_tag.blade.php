@@ -5,8 +5,8 @@
 </head>
 <body>	
 	<h1>List of Tag</h1>&nbsp
-	<a href="/system/tag/add">Add Tag</a>|| 
-	<a href="/system/admin/home">Back</a>|| 
+	<a href="/system/tag/add">Add Tag</a>||
+	<a href="/system/user/home">Back</a>| 
 	<a href="/logout">Logout</a>
 
 	<table border="1">
@@ -21,8 +21,8 @@
 			<td>{{$tag->tagid}}</td>
 			<td>{{$tag->hashtag}}</td>
 			<td>
-				<a href="{{route('admin.edittag',$tag->tagid)}}">Edit</a> ||
-				<a href="{{route('admin.deletetag',$tag->tagid)}}">Delete</a>
+				<a href="{{route('user.edittag',$tag->tagid)}}">Edit</a> ||
+				<a href="{{route('user.deletetag',$tag->tagid)}}">Delete</a>
 			</td>
 		</tr>
 		@endforeach

@@ -37,11 +37,7 @@ class registerController extends Controller
                     'name' => $req->input('name'),
                     'email' => $req->input('email'),
                     'password' => $req->input('password'),
-                    'company' => $req->input('company'),
-                    'registered'=>Carbon::today(),
-                    'operator' => null,
-                    'validated' => 1,
-                    'role'=>'manager'
+                    'role'=>'user'
                     ]
                 );
                 $req->session()->put('email', $req->email);

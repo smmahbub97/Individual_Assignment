@@ -5,7 +5,7 @@
 </head>
 <body>	
 
-	<h1>Edit Category</h1>&nbsp
+	<h1>Edit Tag</h1>&nbsp
 	<a href="/system/user/home">Back</a>|
 	<a href="/logout">Logout</a> <br>
 
@@ -14,15 +14,11 @@
 		<table>
 			<tr>
 				<td>ID</td>
-				<td><input type="text" readonly name="id" value="{{$cat->catid}}"></td>
-			</tr>
-			<tr>
-				<td>Category Name</td>
-				<td><input type="text" name="catname" value="{{$cat->catname}}"></td>
+				<td><input type="text" readonly name="id" value="{{$tags->tagid}}"></td>
 			</tr>
 			<tr>
 				<td>Tag</td>
-				<td><input type="text" name="tag" value="{{$cat->tag}}"></td>
+				<td><input type="text" name="tag" value="{{$tags->hashtag}}"></td>
 			</tr>
 			<tr>
 				<td></td>

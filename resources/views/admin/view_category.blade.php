@@ -4,8 +4,8 @@
 	
 </head>
 <body>	
-	 | 
-	<a href="/system/admin/home">Back</a>| 
+	<h1>Category List</h1>&nbsp
+	<a href="/system/admin/home">Back</a>|| 
 	<a href="/logout">Logout</a>
 
 	<table border="1">
@@ -16,7 +16,7 @@
 			<th>Action</th>
 		</tr>
 		
-		@foreach($categories as $category)
+		@foreach($cat as $category)
 		<tr>
 			<td>{{$category->catid}}</td>
 			<td>{{$category->catname}}</td>

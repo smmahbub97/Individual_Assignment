@@ -49,7 +49,9 @@ class adminController extends Controller
         }
 
         else {
-            DB::table('category')->insert([
+            DB::table('category')
+            ->where('catid',$req->id)
+            ->update([
                 'catname' => $req->input('catname'),
                 'tag' => $req->input('tag'),
                 
@@ -88,7 +90,7 @@ class adminController extends Controller
     public function update_tag(Request $req)
     {
       $validation = Validator::make($req->all(), [
-        'tag'=>'required'
+        //'hashtag'=>'required'
         
     ]);
 
@@ -103,11 +105,14 @@ class adminController extends Controller
         }
 
         else {
-            DB::table('tag')->insert([
-                'tag' => $req->input('tag'),
+            DB::table('tag')
+            ->where('tagid',$req->id)
+            ->update([
+                'hashtag' => $req->input('hashtag')
                 
-                ]
+              ]
             );
+
             return redirect()->route('admin.view_tag');
         }
     }
@@ -126,10 +131,11 @@ class adminController extends Controller
     public function insert(Request $req)
     {
       $validation = Validator::make($req->all(), [
-        'tag'=>'required',
+        //'hashtag'=>'required',
     ]);
 
-    if($validation->fails()){
+    if($validation->fails())
+    {
         return back()
                 ->with('errors', $validation->errors())
                 ->withInput();
@@ -139,12 +145,15 @@ class adminController extends Controller
                         ->withInput();
         }
 
-        else {
-            DB::table('tag')->insert([
-                'tag' => $req->input('tag'),
+        else 
+        {
+            DB::table('tag')
+            ->insert([
+                'hashtag' => $req->input('hashtag')
                 ]
             );
-            return redirect()->route('admin.tag');
+
+            return redirect()->route('admin.view_tag');
     }
 
     }

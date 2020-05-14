@@ -14,11 +14,11 @@
 		<table>
 			<tr>
 				<td>ID</td>
-				<td><input type="text" readonly name="id" value="{{$tags->tagid}}"></td>
+				<td><input type="text" readonly name="tagid" value="{{$tags->tagid}}"></td>
 			</tr>
 			<tr>
 				<td>Tag</td>
-				<td><input type="text" name="tag" value="{{$tags->hashtag}}"></td>
+				<td><input type="text" name="hashtag" value="{{$tags->hashtag}}"></td>
 			</tr>
 			<tr>
 				<td></td>

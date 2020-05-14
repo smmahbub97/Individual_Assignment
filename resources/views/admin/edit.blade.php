@@ -14,7 +14,7 @@
 		<table>
 			<tr>
 				<td>ID</td>
-				<td><input type="text" readonly name="id" value="{{$cat->catid}}"></td>
+				<td><input type="text" readonly name="catid" value="{{$cat->catid}}"></td>
 			</tr>
 			<tr>
 				<td>Category Name</td>

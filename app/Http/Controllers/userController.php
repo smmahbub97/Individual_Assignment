@@ -127,7 +127,7 @@ class userController extends Controller
     public function insert(Request $req)
     {
       $validation = Validator::make($req->all(), [
-        'tag'=>'required',
+        'hashtag'=>'required',
     ]);
 
     if($validation->fails()){
@@ -142,7 +142,7 @@ class userController extends Controller
 
         else {
             DB::table('tag')->insert([
-                'tag' => $req->input('tag'),
+                'hashtag' => $req->input('hashtag'),
                 ]
             );
             return redirect()->route('user.tag');

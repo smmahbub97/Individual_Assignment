@@ -8,7 +8,7 @@
 	<a href="/system/user/home">Back</a>
 	<form method="post" >
 		@csrf
-		Tag: <input type="text" name="tag" > <br>
+		Tag: <input type="text" name="hashtag" > <br>
 		<input type="submit" name="submit" value="Submit" >
 	</form>
 

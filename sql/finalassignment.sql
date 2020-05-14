@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2020 at 12:40 PM
+-- Generation Time: May 14, 2020 at 11:57 AM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.6
 
@@ -39,7 +39,7 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`catid`, `catname`, `tag`) VALUES
-(12, 'poem', 'shekspir');
+(32, 'novel', 'CharlesDickens');
 
 -- --------------------------------------------------------
 
@@ -57,8 +57,9 @@ CREATE TABLE `tag` (
 --
 
 INSERT INTO `tag` (`tagid`, `hashtag`) VALUES
-(3, 'qurantine'),
-(4, 'covid19');
+(8, 'covid19'),
+(10, 'vaccine'),
+(12, 'qurantine');
 
 -- --------------------------------------------------------
 
@@ -80,7 +81,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`) VALUES
 (3, 'mahbub', 'sm97@gmail.com', '12345678', 'admin'),
-(4, 'alam', 'alam@gmail.com', '1234567', 'user');
+(4, 'alam', 'alam@gmail.com', '1234567', 'user'),
+(5, 'mahabub', 'md@gmail.com', '123456', 'user');
 
 --
 -- Indexes for dumped tables
@@ -112,19 +114,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `catid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `catid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `tag`
 --
 ALTER TABLE `tag`
-  MODIFY `tagid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `tagid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
